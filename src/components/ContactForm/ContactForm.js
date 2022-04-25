@@ -17,7 +17,7 @@ function ContactForm () {
 const onSaveContactClicked = (data) => {
   const message = `${data.name} is alredy in contacts`;
   const findName = contacts.find(contact => contact.name.toLowerCase() === data.name.toLowerCase());
-  const findNumber = contacts.find(contact => contact.number === data.number);
+  const findNumber = contacts.find(contact => contact.phone === data.phone);
 
   if (findName || findNumber !== undefined) {
     alert(message);
@@ -25,9 +25,8 @@ const onSaveContactClicked = (data) => {
 
   if (contacts) {
     createContacts({
-          id: nanoid(),
-          name: data.name,
-          number: data.number
+          name,
+          phone:number,
       })  
   }}
 

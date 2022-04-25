@@ -21,12 +21,12 @@ const filteredContactList = filtredContacts();
 <ul className={s.contactList}>
 { contacts
         ?
-        filteredContactList.map(({id,name, number})=>{
+        filteredContactList.map(({id,name, phone})=>{
       return(
         <li key={id}
         className={s.contactList_item}>
         <p className={s.contactList__text}>{name}</p>
-        <p className={s.contactList__text}>{number}</p>
+        <p className={s.contactList__text}>{phone}</p>
         <button onClick={()=>deleteContacts(id)} >delete</button>
       </li>
       )
